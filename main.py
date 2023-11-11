@@ -4,7 +4,7 @@ from joblib import load
 
 IMG_SIZE = 227
 
-model = load('lrc_xray.joblib')
+model = load('lrc_xray.pkl')
 
 uploaded_file = st.file_uploader("Choose an image file", accept_multiple_files=False)
 if uploaded_file is not None:
