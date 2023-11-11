@@ -1,10 +1,11 @@
 import streamlit as st
 from PIL import Image
-from joblib import load
+import pickle
 
 IMG_SIZE = 227
 
-model = load('lrc_xray.pkl')
+pickle_in = open('lrc_xray.pkl', 'rb') 
+model = pickle.load(pickle_in)
 
 uploaded_file = st.file_uploader("Choose an image file", type=(['png', 'jpg', 'jpeg']))
 if uploaded_file is not None:
