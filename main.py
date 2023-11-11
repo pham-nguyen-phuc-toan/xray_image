@@ -10,4 +10,4 @@ if uploaded_file is not None:
     st.image(image, caption='Test image')
 
     if st.button('Predict'):
-        st.write(model.predict(st.image)
+        st.write(model.predict(st.image))
