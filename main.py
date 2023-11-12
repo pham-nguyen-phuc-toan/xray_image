@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image
 import pickle as pkl
+import numpy as np
 
 IMG_SIZE = 227
 
@@ -14,6 +15,6 @@ if uploaded_file is not None:
 
     if st.button('Predict'):
         image = image.resize((1, IMG_SIZE*IMG_SIZE*3))
-        st.write(image[0, 0])
+        st.write(np.array(image))
         label = model.predict(image)
         st.write(label)
