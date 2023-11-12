@@ -19,5 +19,5 @@ if uploaded_file is not None:
         image = image.resize((IMG_SIZE*IMG_SIZE*3, 1))
         feature_vector = np.array(image)
         st.write(model)
-        label = str(model.predict(feature_vector))
+        label = str((model.predict(feature_vector))[0])
         st.write(class_list[label])
