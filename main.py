@@ -4,7 +4,7 @@ import pickle
 
 IMG_SIZE = 227
 
-input = read('lrc_xray.pkl', 'rb')
+input = open('lrc_xray.pkl', 'rb')
 model = pickle.load(input)
 
 uploaded_file = st.file_uploader("Choose an image file", type=(['png', 'jpg', 'jpeg']))
