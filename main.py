@@ -13,5 +13,5 @@ if uploaded_file is not None:
     st.image(image, caption='Test image')
 
     if st.button('Predict'):
-        image = image.reshape(1, IMG_SIZE*IMG_SIZE*3)
+        image = image.resize((1, IMG_SIZE*IMG_SIZE*3))
         # st.write(model.predict(image))
