@@ -1,5 +1,5 @@
 import streamlit as st
-import cv2 as cv
+from PIL import Image
 import pickle as pkl
 
 IMG_SIZE = 227
@@ -9,7 +9,7 @@ model = pkl.load(input)
 
 uploaded_file = st.file_uploader("Choose an image file", type=(['png', 'jpg', 'jpeg']))
 if uploaded_file is not None:
-    image = cv.imread(uploaded_file)
+    image = Image.open(uploaded_file)
     st.image(image, caption='Test image')
 
     if st.button('Predict'):
