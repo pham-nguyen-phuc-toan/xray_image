@@ -5,6 +5,8 @@ import numpy as np
 
 IMG_SIZE = 227
 
+class = {1: 'NORMAL', 2: 'PNEUMONIA'}
+
 input = open('lrc_xray.pkl', 'rb')
 model = pkl.load(input)
 
