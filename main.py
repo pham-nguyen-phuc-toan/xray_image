@@ -5,7 +5,7 @@ import numpy as np
 
 IMG_SIZE = 227
 
-class = {0: 'NORMAL', 1: 'PNEUMONIA'}
+class = {'0': 'NORMAL', '1': 'PNEUMONIA'}
 
 input = open('lrc_xray.pkl', 'rb')
 model = pkl.load(input)
@@ -20,4 +20,4 @@ if uploaded_file is not None:
         feature_vector = np.array(image)
         st.write(model)
         label = model.predict(feature_vector)
-        st.write(label)
+        st.write(class[label])
