@@ -12,6 +12,7 @@ st.title('Pneumonia prediction based on chest X-Ray image')
 input = open('lrc_xray.pkl', 'rb')
 model = pkl.load(input)
 
+st.header('Upload chest X-Ray image')
 uploaded_file = st.file_uploader("Choose an image file", type=(['png', 'jpg', 'jpeg']))
 
 if uploaded_file is not None:
@@ -22,4 +23,6 @@ if uploaded_file is not None:
         image = image.resize((IMG_SIZE*IMG_SIZE*3, 1))
         feature_vector = np.array(image)
         label = str((model.predict(feature_vector))[0])
-        st.label(class_list[label])
+
+        st.header('Result')
+        st.text(class_list[label])
